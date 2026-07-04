@@ -1,0 +1,257 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FarmSync Design System - Agricultural, Professional, Earthy */
+
+@layer base {
+  :root {
+    /* Core Background - Warm cream/off-white */
+    --background: 40 30% 97%;
+    --foreground: 25 30% 15%;
+
+    /* Cards - Clean white with warm undertone */
+    --card: 40 20% 99%;
+    --card-foreground: 25 30% 15%;
+
+    /* Popover */
+    --popover: 40 20% 99%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Deep forest green */
+    --primary: 152 45% 25%;
+    --primary-foreground: 40 30% 97%;
+
+    /* Secondary - Warm sand/tan */
+    --secondary: 35 35% 88%;
+    --secondary-foreground: 25 30% 20%;
+
+    /* Muted - Soft sage */
+    --muted: 130 15% 92%;
+    --muted-foreground: 25 15% 45%;
+
+    /* Accent - Amber/gold for highlights */
+    --accent: 38 85% 55%;
+    --accent-foreground: 25 30% 12%;
+
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders - Warm gray-green */
+    --border: 130 10% 85%;
+    --input: 130 10% 85%;
+    --ring: 152 45% 30%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar - Dark forest theme */
+    --sidebar-background: 152 40% 12%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 85% 55%;
+    --sidebar-primary-foreground: 25 30% 12%;
+    --sidebar-accent: 152 35% 18%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 152 30% 20%;
+    --sidebar-ring: 38 85% 55%;
+
+    /* Custom semantic colors */
+    --success: 142 70% 35%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 25 30% 12%;
+    --info: 200 75% 45%;
+    --info-foreground: 0 0% 100%;
+
+    /* Chart colors - Nature palette */
+    --chart-1: 152 45% 35%;
+    --chart-2: 38 85% 55%;
+    --chart-3: 25 45% 45%;
+    --chart-4: 200 65% 50%;
+    --chart-5: 340 55% 50%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 45% 25%), hsl(152 50% 35%));
+    --gradient-accent: linear-gradient(135deg, hsl(38 85% 55%), hsl(45 90% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(40 30% 97%), hsl(40 25% 94%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(25 30% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(25 30% 15% / 0.1), 0 2px 4px -2px hsl(25 30% 15% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(25 30% 15% / 0.1), 0 4px 6px -4px hsl(25 30% 15% / 0.1);
+    --shadow-card: 0 1px 3px 0 hsl(25 30% 15% / 0.08), 0 1px 2px -1px hsl(25 30% 15% / 0.08);
+  }
+
+  .dark {
+    --background: 152 30% 8%;
+    --foreground: 40 20% 92%;
+
+    --card: 152 25% 12%;
+    --card-foreground: 40 20% 92%;
+
+    --popover: 152 25% 12%;
+    --popover-foreground: 40 20% 92%;
+
+    --primary: 152 50% 45%;
+    --primary-foreground: 152 30% 8%;
+
+    --secondary: 152 20% 18%;
+    --secondary-foreground: 40 20% 92%;
+
+    --muted: 152 20% 18%;
+    --muted-foreground: 130 15% 60%;
+
+    --accent: 38 85% 55%;
+    --accent-foreground: 25 30% 12%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 152 20% 22%;
+    --input: 152 20% 22%;
+    --ring: 152 50% 45%;
+
+    --sidebar-background: 152 35% 6%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 38 85% 55%;
+    --sidebar-primary-foreground: 25 30% 12%;
+    --sidebar-accent: 152 30% 12%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 152 25% 15%;
+    --sidebar-ring: 38 85% 55%;
+
+    --success: 142 70% 45%;
+    --warning: 38 92% 55%;
+    --info: 200 75% 55%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(152 50% 45%), hsl(152 55% 55%));
+    --gradient-hero: linear-gradient(180deg, hsl(152 30% 8%), hsl(152 25% 12%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-200;
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
+  }
+
+  /* Stats card styling */
+  .stat-card {
+    @apply relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-5;
+    background: var(--gradient-primary);
+  }
+
+  /* Data table row hover */
+  .table-row-hover {
+    @apply transition-colors duration-150;
+  }
+
+  .table-row-hover:hover {
+    @apply bg-muted/50;
+  }
+
+  /* Status badges */
+  .status-active {
+    @apply bg-success/15 text-success border-success/30;
+  }
+
+  .status-sold {
+    @apply bg-info/15 text-info border-info/30;
+  }
+
+  .status-deceased {
+    @apply bg-destructive/15 text-destructive border-destructive/30;
+  }
+
+  .status-transferred {
+    @apply bg-warning/15 text-warning border-warning/30;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-muted/50 rounded-full;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full hover:bg-muted-foreground/30;
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Pulse subtle animation for live indicators */
+  .animate-pulse-subtle {
+    animation: pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+}
