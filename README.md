@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Ranch Companion
 
-## Project info
+A multi-tenant farm and livestock management platform with role-based dashboards for farmers, vets, farm managers, and clients — including health record tracking, breeding and movement logs, and an AI-powered farm assistant.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Role-based access** — separate dashboards and permissions for farmers, vets, farm managers, and clients
+- **Livestock tracking** — health records, breeding records, and movement history per animal
+- **AI farm assistant** — chat-based farming advice and automated health record analysis
+- **QR-based traceability** — quick lookup and identification for individual animals
+- **Team & access management** — role requests, approvals, and audit logging for farm access
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React, TypeScript, Vite, Tailwind CSS, shadcn/ui
+- **Data & Auth**: Supabase (Postgres, Auth, Edge Functions)
+- **State/data fetching**: TanStack Query
+- **Testing**: Vitest, React Testing Library
+- **CI/CD**: GitHub Actions (lint, test, build on every push/PR)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Requires [Node.js](https://nodejs.org/) and npm.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/bigsmoke256/ranch-companion-v2.git
+cd ranch-companion-v2
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the local dev server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Environment variables
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+You'll need a Supabase project. Copy `.env.example` (or create `.env`) with:
 
-**Use GitHub Codespaces**
+```
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Available scripts
 
-## What technologies are used for this project?
+```sh
+npm run dev            # start local dev server
+npm run build           # production build
+npm run lint            # run ESLint
+npm run test            # run test suite once
+npm run test:watch      # run tests in watch mode
+npm run test:coverage   # run tests with coverage report
+```
 
-This project is built with:
+## Project Status
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Actively developed. Current focus areas:
+- Code-splitting to reduce bundle size
+- Accessibility audit
+- Expanding automated test coverage
 
-## How can I deploy this project?
+## License
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Private project — all rights reserved.
